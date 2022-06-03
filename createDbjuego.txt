@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`nivel`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS mydb.nivel (
+CREATE TABLE IF NOT EXISTS gameDB.nivel (
   niv_id INT NOT NULL AUTO_INCREMENT,
   nivel VARCHAR(45) NOT NULL,
   PRIMARY KEY (niv_id))
@@ -54,13 +54,13 @@ CREATE TABLE IF NOT EXISTS gameDB.pregunta (
   pre_respuesta3 VARCHAR(45) NOT NULL,
   pre_respuesta4 VARCHAR(45) NOT NULL,
   correcta VARCHAR(45) NOT NULL,
-  nivel_niv_id` INT NOT NULL,
+  nivel_niv_id INT NOT NULL,
   PRIMARY KEY (pre_id),
   UNIQUE INDEX pre_id_UNIQUE (pre_id ASC) VISIBLE,
   INDEX fk_pregunta_nivel1_idx (nivel_niv_id ASC) VISIBLE,
   CONSTRAINT fk_pregunta_nivel1
     FOREIGN KEY (nivel_niv_id)
-    REFERENCES mydb.nivel (niv_id)
+    REFERENCES gameDB.nivel (niv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
