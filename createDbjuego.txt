@@ -1,0 +1,67 @@
+CREATE SCHEMA IF NOT EXISTS gameDB DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema preguntasdb
+-- -----------------------------------------------------
+USE gameDB ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS gameDB.usuario (
+  usu_id INT NOT NULL AUTO_INCREMENT,
+  usu_nombre VARCHAR(45) NOT NULL,
+  PRIMARY KEY (usu_id),
+  UNIQUE INDEX usu_id_UNIQUE (usu_id ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`puntaje`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS gameDB.puntaje (
+  pun_id INT NOT NULL AUTO_INCREMENT,
+  pun_puntaje VARCHAR(45) NOT NULL,
+  usuario_usu_id INT NOT NULL,
+  PRIMARY KEY (pun_id),
+  UNIQUE INDEX pun_id_UNIQUE (pun_id ASC) VISIBLE,
+  INDEX fk_puntaje_usuario_idx (usuario_usu_id ASC) VISIBLE,
+  CONSTRAINT fk_puntaje_usuario
+    FOREIGN KEY (usuario_usu_id)
+    REFERENCES gameDB.usuario (usu_id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`nivel`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS mydb.nivel (
+  niv_id INT NOT NULL AUTO_INCREMENT,
+  nivel VARCHAR(45) NOT NULL,
+  PRIMARY KEY (niv_id))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`pregunta`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS gameDB.pregunta (
+  pre_id INT NOT NULL AUTO_INCREMENT,
+  pre_pregunta VARCHAR(45) NOT NULL,
+  pre_respuesta1 VARCHAR(45) NOT NULL,
+  pre_respuesta2 VARCHAR(45) NOT NULL,
+  pre_respuesta3 VARCHAR(45) NOT NULL,
+  pre_respuesta4 VARCHAR(45) NOT NULL,
+  correcta VARCHAR(45) NOT NULL,
+  nivel_niv_id` INT NOT NULL,
+  PRIMARY KEY (pre_id),
+  UNIQUE INDEX pre_id_UNIQUE (pre_id ASC) VISIBLE,
+  INDEX fk_pregunta_nivel1_idx (nivel_niv_id ASC) VISIBLE,
+  CONSTRAINT fk_pregunta_nivel1
+    FOREIGN KEY (nivel_niv_id)
+    REFERENCES mydb.nivel (niv_id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
