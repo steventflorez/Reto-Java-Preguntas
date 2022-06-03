@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`nivel`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS mydb.nivel (
+CREATE TABLE IF NOT EXISTS gameDB.nivel (
   niv_id INT NOT NULL AUTO_INCREMENT,
   nivel VARCHAR(45) NOT NULL,
   PRIMARY KEY (niv_id))
@@ -48,20 +48,277 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS gameDB.pregunta (
   pre_id INT NOT NULL AUTO_INCREMENT,
-  pre_pregunta VARCHAR(45) NOT NULL,
+  pre_pregunta VARCHAR(200) NOT NULL,
   pre_respuesta1 VARCHAR(45) NOT NULL,
   pre_respuesta2 VARCHAR(45) NOT NULL,
   pre_respuesta3 VARCHAR(45) NOT NULL,
   pre_respuesta4 VARCHAR(45) NOT NULL,
   correcta VARCHAR(45) NOT NULL,
-  nivel_niv_id` INT NOT NULL,
+  nivel_niv_id INT NOT NULL,
   PRIMARY KEY (pre_id),
   UNIQUE INDEX pre_id_UNIQUE (pre_id ASC) VISIBLE,
   INDEX fk_pregunta_nivel1_idx (nivel_niv_id ASC) VISIBLE,
   CONSTRAINT fk_pregunta_nivel1
     FOREIGN KEY (nivel_niv_id)
-    REFERENCES mydb.nivel (niv_id)
+    REFERENCES gameDB.nivel (niv_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+INSERT INTO nivel (nivel) VALUE ('1');
+INSERT INTO nivel (nivel) VALUE ('2');
+INSERT INTO nivel (nivel) VALUE ('3');
+INSERT INTO nivel (nivel) VALUE ('4');
+INSERT INTO nivel (nivel) VALUE ('5');
+INSERT INTO nivel (nivel) VALUE ('6');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuantos dias tiene un año?','100','563','365','265','3','1');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿En que pais esta la muralla china?','Japon','Cuba','China','Roma','3','1');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cual de los siguientes animales no puede volar?','Aguila','Condor','Paloma','Gallina','4','1');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿como se dice CARRO en ingles?','Rum','Cat','Car','Bus','3','1');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuales son los colores de la bandera de Colombia?','Azul, Verda y Rojo','Amarillo, Azul y Rojo','Rojo, Morado y Dorado','Amarillo Azul y rosado','2','1');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál es el animal más grande de la Tierra?','La ballena azul','El elefante','La jirafa','El cocodrilo','2','2');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál es el planeta más alejado del Sol?','Jupiter','Neptuno','Pluton','Marte','2','2');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuántos días tiene un año bisiesto?','365','366','364','360','2','2');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuántos anillos hay en la bandera olímpica?','7','3','4','5','4','2');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Quién es el fundador de Facebook?','Jeff Bezos','Bill Gates','Steve Jobs','Mark Zuckerberg','2','2');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál es el libro sagrado del Islam?','La Biblia','El libro Mormon','El Corán','El Kojiki','3','3');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Con qué moneda pagas si vas a Japón?','El yen','El Won','El Renminbi','La Libra Exterlina','1','3');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuántas películas de Harry Potter se han hecho?','5','8','1','7','2','3');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Qué animal contagió a los humanos en la pandemia de peste negra?','Ratas','Mosquitos','Pulgas','Perros','3','3');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál ha sido el futbolista más caro de la historia?','Messi','Ronaldinho','Cristiano Ronaldo','Neymar','4','3');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿En qué continente está Siria?','Europa','Norte America','En Asia','Sur America','3','4');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál es el órgano más grande del cuerpo humano?','El Pulmon','La Piel','El intestino grueso','El intestino delgado','2','4');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Quién fue el último faraón de Egipto?','Tutankamon','Ramsés III','Kefren','Merenptah','2','4');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuántos huesos tiene el cuerpo humano?','307','55','127','206','4','4');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál es la luna más grande de Saturno?','Titán','Pandora','CNarvi','Egeon','1','4');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuál fue la primera civilización humana?','Los Fenicios','La Romana','La china','La sumeria','4','5');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Dónde está Transilvania?','Rumanía','Italia','Artantida','Groenlandi','1','5');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuántos corazones tiene un gusano de tierra?','1','5','3','no tienen','2','5');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuándo llegó el hombre a la Luna?','11 de junio 2000 ','15 de octubre 1895','16 de julio de 1969','16 de junio de 1969','3','5');
+
+INSERT INTO pregunta (
+pre_pregunta,
+pre_respuesta1,
+pre_respuesta2,
+pre_respuesta3,
+pre_respuesta4,
+correcta,
+nivel_niv_id) VALUE (
+'¿Cuántas patas tiene una araña?','8','4','100','6','1','5');
