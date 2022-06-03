@@ -21,7 +21,7 @@ public class UserController {
 
     @PostMapping(path = "/user")
     public void create() {
-        
+
     }
 
 
