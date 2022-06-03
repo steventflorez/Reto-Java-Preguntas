@@ -1,7 +1,10 @@
 package com.sofka.proyect.JuegoPreguntas.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "puntaje")
 public class Puntaje {
