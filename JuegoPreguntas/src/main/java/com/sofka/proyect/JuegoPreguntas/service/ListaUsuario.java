@@ -48,9 +48,13 @@ public class ListaUsuario implements IList {
 
     @Override
     @Transactional
-    public Puntaje createPuntaje(Puntaje puntaje) {
+    public Puntaje createPuntaje(Puntaje puntaje, Usuario usuario) {
         return puntajeDao.save(puntaje);
     }
+
+//    @Override
+//    @Transactional
+//    public Optional<Puntaje> getUserPuntaje(Puntaje puntaje){return  puntajeDao.fin(puntaje.getUsuarioUsu());}
 
     @Override
     @Transactional

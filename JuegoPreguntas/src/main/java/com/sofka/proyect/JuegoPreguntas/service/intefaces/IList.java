@@ -18,6 +18,15 @@ public interface IList {
     public Optional<Usuario> getUser(Usuario usuario);
 
     /**
+     * Devuelve el usuario de la tabla puntos
+     *
+     * @return
+     * @author Julian Lasso <julian.lasso@sofka.com.co>
+     * @since 1.0.0
+     */
+    // Optional<Puntaje> getUserPuntaje(Puntaje puntaje);
+
+    /**
      * Crea un usuario
      *
      * @param usuario Objeto del contacto a crear
@@ -44,7 +53,7 @@ public interface IList {
      * @author Julian Lasso <julian.lasso@sofka.com.co>
      * @since 1.0.0
      */
-    public Puntaje createPuntaje(Puntaje puntaje);
+    public Puntaje createPuntaje(Puntaje puntaje, Usuario usuario);
 
     /**
      * Devuelve una lista de usuarios con su respectivo puntaje ordenado de mayor a menor
