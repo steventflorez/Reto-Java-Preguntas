@@ -1,5 +1,6 @@
 package com.sofka.proyect.JuegoPreguntas.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,6 +31,7 @@ public class Pregunta {
     @Column(name = "correcta", nullable = false, length = 45)
     private String correcta;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "nivel_niv_id", nullable = false)
     private Nivel nivelNiv;
