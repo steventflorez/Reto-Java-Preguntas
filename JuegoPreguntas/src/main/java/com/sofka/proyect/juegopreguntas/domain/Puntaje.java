@@ -1,5 +1,6 @@
-package com.sofka.proyect.JuegoPreguntas.domain;
+package com.sofka.proyect.juegopreguntas.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Puntaje {
     @Column(name = "pun_puntaje", nullable = false, length = 45)
     private String punPuntaje;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "usuario_usu_id", nullable = false)
     private Usuario usuarioUsu;

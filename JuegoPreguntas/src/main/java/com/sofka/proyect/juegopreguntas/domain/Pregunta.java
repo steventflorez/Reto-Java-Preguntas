@@ -1,4 +1,4 @@
-package com.sofka.proyect.JuegoPreguntas.domain;
+package com.sofka.proyect.juegopreguntas.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;

@@ -1,5 +1,6 @@
-package com.sofka.proyect.JuegoPreguntas.domain;
+package com.sofka.proyect.juegopreguntas.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -23,6 +24,7 @@ public class Usuario {
     @Column(name = "usu_nombre", nullable = false, length = 45)
     private String usuNombre;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "usuarioUsu")
     private Set<Puntaje> puntajes = new LinkedHashSet<>();
 

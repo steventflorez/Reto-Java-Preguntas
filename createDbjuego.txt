@@ -1,3 +1,9 @@
+---------------------------------------------------------------------------------------------------
+CREACION DE BASE DE DATOS
+---------------------------------------------------------------------------------------------------
+
+
+
 CREATE SCHEMA IF NOT EXISTS gameDB DEFAULT CHARACTER SET utf8 ;
 -- -----------------------------------------------------
 -- Schema preguntasdb
@@ -65,6 +71,10 @@ CREATE TABLE IF NOT EXISTS gameDB.pregunta (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+---------------------------------------------------------------------------------------------------
+COMANDOS PARA LLENAR BASE DE DATOS
+---------------------------------------------------------------------------------------------------
 
 INSERT INTO nivel (nivel) VALUE ('1');
 INSERT INTO nivel (nivel) VALUE ('2');

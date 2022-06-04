@@ -1,6 +1,6 @@
-package com.sofka.proyect.JuegoPreguntas.dao;
+package com.sofka.proyect.juegopreguntas.dao;
 
-import com.sofka.proyect.JuegoPreguntas.domain.Nivel;
+import com.sofka.proyect.juegopreguntas.domain.Nivel;
 import org.springframework.data.repository.CrudRepository;
 
 public interface NivelDao extends CrudRepository<Nivel, Integer> {

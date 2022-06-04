@@ -1,4 +1,4 @@
-package com.sofka.proyect.JuegoPreguntas.domain;
+package com.sofka.proyect.juegopreguntas.domain;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
@@ -16,7 +16,7 @@ public class Nivel {
     private Integer id;
 
     @Column(name = "nivel", nullable = false, length = 45)
-    private String nivel;
+    private String levelNivel;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "nivelNiv")
