@@ -1,5 +1,6 @@
 package com.sofka.proyect.JuegoPreguntas.service.intefaces;
 
+import com.sofka.proyect.JuegoPreguntas.domain.Pregunta;
 import com.sofka.proyect.JuegoPreguntas.domain.Puntaje;
 import com.sofka.proyect.JuegoPreguntas.domain.Usuario;
 import org.springframework.data.domain.Sort;
@@ -64,4 +65,6 @@ public interface IList {
      * @since 1.0.0
      */
     public List<Puntaje> getList();
+
+
 }

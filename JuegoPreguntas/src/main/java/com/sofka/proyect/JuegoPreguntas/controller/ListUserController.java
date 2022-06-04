@@ -32,12 +32,7 @@ public class ListUserController {
         return new ResponseEntity<Usuario>(usuario, HttpStatus.CREATED);
     }
 
-//    @PostMapping(path = "/points/{id}")
-//    public Puntaje createPuntaje(@RequestBody Puntaje puntaje, Usuario usuario){
-//        for (Puntaje iterator : listaUsuario.getList()) {
-//
-//        }
-//    }
+
 
     @GetMapping(path ="/points" )
     public List<Puntaje> getList(){
